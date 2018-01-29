@@ -2,6 +2,8 @@ import bottle
 import os
 import random
 
+#This is the data that will be provided by the game on each turn
+
 # DATA OBJECT
 # {
 #     "game": "hairy-cheese",
@@ -15,15 +17,9 @@ import random
 #     "food": [
 #         [1, 2], [9, 3], ...
 #     ],
-#     "walls": [    // Advanced Only
-#         [2, 2]
-#     ],
-#     "gold": [     // Advanced Only
-#         [5, 5]
-#     ]
 # }
 
-#SNAKE
+#SNAKE OBJECT
 # {
 #     "id": "1234-567890-123456-7890",
 #     "name": "Well Documented Snake",
@@ -43,7 +39,7 @@ def static(path):
     return bottle.static_file(path, root='static/')
 
 
-@bottle.post('//start')
+@bottle.post('/start')
 def start():
     data = bottle.request.json
     game_id = data['game_id']
@@ -58,20 +54,25 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FFFF',
+        'color': '#00FF00',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'Claire'
+        'name': 'battlesnake-python'
     }
 
 
-@bottle.post('//move')
+@bottle.post('/move')
 def move():
     data = bottle.request.json
-    snek = data['snakes']
-    
+
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
+    
+    ## Code to check the direction our snake is moving, can be replicated into a 
+    ## method/def to see what direction every snake on the board is moving in.
+    ## Essentially narrows down the potential directions so the snake will never run into itself.
+    ## Currently working on checking if walls or food are immediately next to the head, to further 
+    ## narrow down actions.
     
     # Checks if the coordinates are on the same row
     #if self_coords[0][0] == self_coords[1][0]:
@@ -87,14 +88,13 @@ def move():
     #    elif self_coords[0][0] > self_coords[1][0]:
     #        directions = ['up', 'left', 'right']
     
-    
     return {
         'move': random.choice(directions),
-        'taunt': 'fuck this shit im out'
+        'taunt': 'battlesnake-python!'
     }
 
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
 if __name__ == '__main__':
-    bottle.run(application, host=os.getenv('IP', '134.87.144.119'), port=os.getenv('PORT', '4000'))
+    bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'))
