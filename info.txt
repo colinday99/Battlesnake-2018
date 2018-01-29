@@ -1,0 +1,16 @@
+TUTORIAL DATE: 4:30-5:30, Feb 5 2018, ECS 123
+
+COMPETITION DATE: 10:00-6:00, Mar 3 2018, Victoria Conference Centre (9:00am start for an optional tutorial)
+
+PLANNED METHODS/DEFS:
+def distance(px1, py1, px2, py2):
+    calculates distance between two points on a graph
+    returns distance
+    used to check which object is closer to another, for our snake to food, enemy snakes, walls
+    
+def init(data):
+    initializes a two dimensional array representing the game board
+    uses game board length and width, coordinates of our snake, food, and other snakes
+    0 for blank space, 1 for snake, 2 for snake head, 3 for enemy snake, 4 for enemy snake head
+    returns a two dimensional array with this data included
+    
