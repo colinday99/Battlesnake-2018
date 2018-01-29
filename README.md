@@ -1,4 +1,4 @@
-I have been unable to figure out the process of retrieving data from the server, I'll learn how on feb 5 at the tutorial. Until then, all code i've done is commented out and will need to be reviewed then. The file to be edited is main.py in the app folder, the rest relates to runtime data or hosting info, or useless stuff I haven't figured out yet.
+I have been unable to figure out the process of retrieving data from the server, I'll learn how on feb 5 at the tutorial. Until then, all code i've done is commented out and will need to be reviewed then. 
 
 # battlesnake-python
 
