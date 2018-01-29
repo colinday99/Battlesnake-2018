@@ -1,0 +1,10 @@
+LOCAL TESTING
+Hosting on docker:
+  Open docker
+  Open the command line
+  Type: docker run -it -p 4000:4000 stembolt/battle_snake
+  Go to localhost:4000
+  Start a new game
+Running the snake on a local game:
+  Open the command line
+  Type: python app/main.py
