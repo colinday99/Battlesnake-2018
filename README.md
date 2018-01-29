@@ -1,4 +1,9 @@
-I have been unable to figure out the process of retrieving data from the server, I'll learn how on feb 5 at the tutorial. Until then, all code i've done is commented out and will need to be reviewed then. 
+I have been unable to figure out the process of retrieving data from the server, I'll learn how on feb 5 at the tutorial. Until then, all code I've done is commented out and will need to be reviewed then. 
+
+info.txt: planned methods/defs, ai planning, or competition info
+main.py: main ai file, written in python
+
+hosting_commands.txt: instructions for hosting a local test server
 
 # battlesnake-python
 
