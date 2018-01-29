@@ -2,6 +2,8 @@ import bottle
 import os
 import random
 
+### Do not edit method headers
+
 #This is the data that will be provided by the game on each turn
 
 # DATA OBJECT
@@ -38,7 +40,7 @@ import random
 def static(path):
     return bottle.static_file(path, root='static/')
 
-
+# Called at the start of a game
 @bottle.post('/start')
 def start():
     data = bottle.request.json
@@ -57,10 +59,10 @@ def start():
         'color': '#00FF00',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'Claire'
     }
 
-
+#Called before each move
 @bottle.post('/move')
 def move():
     data = bottle.request.json
