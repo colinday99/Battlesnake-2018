@@ -11,6 +11,10 @@ def distance(px1, py1, px2, py2):
 def init(data):
     initializes a two dimensional array representing the game board
     uses game board length and width, coordinates of our snake, food, and other snakes
-    0 for blank space, 1 for snake, 2 for snake head, 3 for enemy snake, 4 for enemy snake head
+    0 for blank space, 1 for snake, 2 for enemy snake, 3 for food
     returns a two dimensional array with this data included
+    
+def direction(coord1, coord2):
+    returns which direction a snake is facing by comparing their first and second coordinates
+    
     
